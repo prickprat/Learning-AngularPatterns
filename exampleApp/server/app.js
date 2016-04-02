@@ -1,8 +1,6 @@
 'use strict';
-
-//Modules
+let path = require('path');
 let express = require('express');
-let app = express();
 /*Middleware - for parsing message bodies */
 let bodyParser = require('body-parser');
 /*Middleware - to compress response bodies. Will not compress cache controlled headers*/
@@ -12,7 +10,7 @@ let cors = require('cors');
 /*Middleware - handles favicon distribution */
 let favicon = require('serve-favicon');
 let logger = require('morgan');
-
+let app = express();
 
 //Environment
 let port = process.env.PORT || 7100;
@@ -30,11 +28,35 @@ console.log('Starting up the server ...');
 console.log(`PORT=${port}`);
 console.log(`NODE_ENV=${environment}`);
 
-
+//Test route
 app.get('/ping', function(req, res, next) {
     console.log(req.body);
     res.send('pong');
 });
+
+//API Route
+let routes = require('./routes/index')(app);
+
+//Client Application Route
+switch (environment){
+    case 'production':
+        // console.log('** PRODUCTION ON AZURE **');
+        // console.log('serving from ' + './build/');
+        // process.chdir('./../../');
+        // app.use('/', express.static('./build/'));
+        break;
+    case 'stage':
+    case 'build':
+        console.log('** BUILD **');
+        console.log('serving from ' + './build/');
+        app.use('/', express.static('./build/'));
+        break;
+    default:
+        console.log('** DEV **');
+        console.log('serving from ./src/client/ and ./');
+        app.use('/', express.static(path.join(__dirname, '../client/')));
+        break;
+}
 
 
 app.listen(port, function(){
