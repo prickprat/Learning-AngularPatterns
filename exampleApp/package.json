@@ -4,11 +4,17 @@
   "description": "Copying off John Papa's stuff to learn things =]",
   "main": "server/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/app.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.13.4"
+    "body-parser": "^1.15.0",
+    "compression": "^1.6.1",
+    "cors": "^2.7.1",
+    "express": "^4.13.4",
+    "morgan": "^1.7.0",
+    "serve-favicon": "^2.3.0"
   }
 }
