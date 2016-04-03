@@ -6,6 +6,7 @@ Learning Log:
 29/3/16     8:45am - 9:15am
 31/3/16     6:00pm - 7:00pm
 1/4/16      8:00am - 8:45am
+4/4/16      8:30am - 9:00am
 
 
 <> Explore Visual Studio Code, it looks pretty cool

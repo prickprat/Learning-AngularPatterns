@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html ng-app="app" ng-strict-di>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <title ng-bind="title"></title>
+    <style>
+        /* This helps the ng-show/ng-hide animations start at the right place. */
+        /* Since Angular has this but needs to load, this gives us the class early. */
+        .ng-hide {
+            display: none!important;
+        }
+    </style>
+
+    <!-- inject-vendor:css -->
+    <link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/node_modules/toastr/toastr.css" rel="stylesheet" />
+    <!-- endinject -->
+
+    <!-- inject:css -->
+    <link href="/client/content/customtheme.css" rel="stylesheet">
+    <link href="/client/content/styles.css" rel="stylesheet" />
+    <!-- endinject -->
+</head>
+<body>
+    <div>
+        <div ng-include="'app/layout/shell.html'"></div>
+        <div id="splash-page" ng-show="false">
+            <div class="page-splash">
+                <div class="page-splash-message">
+                    Angular Modular Demo
+                </div>
+                <div class="progress progress-striped active page-progress-bar">
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- inject-vendor:js -->
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/node_modules/angular/angular.js"></script>
+    <script src="/node_modules/angular-animate/angular-animate.js"></script>
+    <script src="/node_modules/angular-route/angular-route.js"></script>
+    <script src="/node_modules/angular-sanitize/angular-sanitize.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/node_modules/toastr/toastr.js"></script>
+    <script src="/node_modules/moment/moment.js"></script>
+    <!-- <script src="/node_modules/extras.angular.plus/ngplus-overlay.js"></script> -->
+    <!-- endinject -->
+
+
+    <!-- inject:js -->
+    <!-- Bootstrapping -->
+    <script src="/client/app/app.module.js"></script>
+
+    <!-- Reusable Blocks/Modules -->
+    <!-- <script src="/client/app/blocks/exception/exception.module.js"></script>
+    <script src="/client/app/blocks/exception/exception-handler.provider.js"></script>
+    <script src="/client/app/blocks/exception/exception.js"></script>
+    <script src="/client/app/blocks/logger/logger.module.js"></script>
+    <script src="/client/app/blocks/logger/logger.js"></script>
+    <script src="/client/app/blocks/router/router.module.js"></script>
+    <script src="/client/app/blocks/router/routehelper.js"></script> -->
+
+    <!-- core module -->
+    <!-- <script src="/client/app/core/core.module.js"></script>
+    <script src="/client/app/core/constants.js"></script>
+    <script src="/client/app/core/config.js"></script>
+    <script src="/client/app/core/dataservice.js"></script>
+ -->
+    <!-- layout -->
+    <!-- <script src="/client/app/layout/layout.module.js"></script>
+    <script src="/client/app/layout/shell.js"></script>
+    <script src="/client/app/layout/sidebar.js"></script>
+ -->
+    <!--widgets-->
+    <!-- <script src="/client/app/widgets/widgets.module.js"></script>
+    <script src="/client/app/widgets/ccSidebar.js"></script>
+    <script src="/client/app/widgets/ccSpinner.js"></script>
+    <script src="/client/app/widgets/ccWidgetClose.js"></script>
+    <script src="/client/app/widgets/ccWidgetHeader.js"></script>
+    <script src="/client/app/widgets/ccWidgetMinimize.js"></script>
+ -->
+    <!-- dashboard -->
+<!--     <script src="/client/app/dashboard/dashboard.module.js"></script>
+    <script src="/client/app/dashboard/config.route.js"></script>
+    <script src="/client/app/dashboard/dashboard.js"></script> -->
+
+    <!--avengers module-->
+   <!--  <script src="/client/app/avengers/avengers.module.js"></script>
+    <script src="/client/app/avengers/config.route.js"></script>
+    <script src="/client/app/avengers/avengers.js"></script> -->
+    <!-- endinject -->
+</body>
+</html>
